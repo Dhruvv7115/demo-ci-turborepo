@@ -10,14 +10,15 @@ Bun.serve({
 		return new Response("Upgrade failed", { status: 500 });
 	},
 	websocket: {
-		message(ws, message) {
+		message: async function (ws, message) {
 			if (message === "create-user") {
-				client.user.create({
+				const user = await client.user.create({
 					data: {
 						username: `user-${Math.floor(Math.random() * 1000)}`,
-            password: "password",
+						password: "password",
 					},
 				});
+				ws.send(JSON.stringify(user));
 			}
 		},
 		open(ws) {
