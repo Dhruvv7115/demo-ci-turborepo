@@ -1,3 +1,5 @@
+import { client } from "@repo/db/client";
+
 Bun.serve({
 	port: 3002,
 	fetch(req, server) {
@@ -9,8 +11,14 @@ Bun.serve({
 	},
 	websocket: {
 		message(ws, message) {
-      console.log("Received message:", message);
-			ws.send("Server: " + message);
+			if (message === "create-user") {
+				client.user.create({
+					data: {
+						username: `user-${Math.floor(Math.random() * 1000)}`,
+            password: "password",
+					},
+				});
+			}
 		},
 		open(ws) {
 			console.log("WebSocket opened");

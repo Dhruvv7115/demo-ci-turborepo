@@ -45,6 +45,9 @@
     },
     "apps/ws-server": {
       "name": "ws-server",
+      "dependencies": {
+        "@repo/db": "*",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
