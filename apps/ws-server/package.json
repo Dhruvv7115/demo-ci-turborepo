@@ -9,7 +9,8 @@
     "prod": "bun --release src/index.ts"
   },
   "dependencies": {
-    "@repo/db": "*"
+    "@repo/db": "*",
+    "@repo/typescript-config": "*"
   },
   "devDependencies": {
     "@types/bun": "latest"
