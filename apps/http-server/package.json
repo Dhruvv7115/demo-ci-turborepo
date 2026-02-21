@@ -6,10 +6,12 @@
   "scripts": {
     "start": "bun src/index.ts",
     "dev": "bun --watch src/index.ts",
-    "prod": "bun --release src/index.ts"
+    "prod": "bun --release src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun"
   },
   "dependencies": {
     "@repo/db": "*",
+    "@repo/typescript-config": "*",
     "@types/express": "^5.0.6",
     "express": "^5.2.1"
   },
