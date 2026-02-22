@@ -4,6 +4,7 @@ export default async function page() {
   console.log(user);
   return (
     <div>
+      <h1>User Info:</h1>
       <div>username: {user?.username}</div>
       <div>password: {user?.password}</div>
     </div>
