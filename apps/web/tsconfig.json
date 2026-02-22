@@ -1,7 +1,3 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
-  "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./dist"
-  }
+  "extends": "@repo/typescript-config/nextjs.json"
 }
